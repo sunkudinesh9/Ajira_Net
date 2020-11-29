@@ -174,10 +174,17 @@ public class NetworkCommunicationService {
 		return responseEntity;
 	}
 
+	/**
+	 * Method to get the Rout Information
+	 * 
+	 * @param source
+	 * @param target
+	 * @return
+	 */
 	public ResponseEntity<ResponseModel> routInfo(String source, String target) {
 		List<Device> connectedDevices = networkCommunicationDAO.getConnectionFlow();
 		String desplayString = "";
-		if(getDeviceByName(source) != null && getDeviceByName(target) != null) {
+		if (getDeviceByName(source) != null && getDeviceByName(target) != null) {
 			if (!getDeviceByName(target).getType().contains("repeater")
 					&& !getDeviceByName(source).getType().contains("repeater")) {
 				for (int i = 0; i < connectedDevices.size(); i++) {
@@ -195,7 +202,7 @@ public class NetworkCommunicationService {
 			} else {
 				throw new BadRequest("Route cannot be calculated with repeater");
 			}
-		} else{
+		} else {
 			throw new DeviceNotFoundException("Node " + target + " not found");
 		}
 		desplayString = desplayString + target;
