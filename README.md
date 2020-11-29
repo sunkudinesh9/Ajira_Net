@@ -6,6 +6,7 @@ Prerequisites:
 2. Maveen 3
 3. Java 8 or newer 
 4. git
+5. Post man 
 
 Setup:
 1. Open Eclipse or STS
@@ -19,3 +20,10 @@ open the AjiraNetApplication.java -> right click -> run -> run as springboot
 Alternatively you can use the Spring Boot Maven plugin like so:
 
 mvn spring-boot:run
+
+Source to run End points:
+
+1. Open the Post man 
+2. Creat a collection
+3. create the Reuest 
+4. run the URLS based on you provided test cases
