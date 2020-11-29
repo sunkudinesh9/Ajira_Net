@@ -10,7 +10,16 @@ import com.ajiranet.networkcommunicationservice.models.StrengthValue;
 
 @Repository
 public class NetworkCommunicationDAO {
-	List<Device> deviceList = new ArrayList<Device>();
+	private  List<Device> deviceList = new ArrayList<Device>();
+	private  List<Device> connectionList = new ArrayList<Device>();
+	
+	public List<Device> getConnectionFlow(){
+		return connectionList;
+	}
+	
+	public void connectDevice(Device device) {
+		connectionList.add(device);
+	}
 
 	public void save(Device device) {
 		deviceList.add(device);
@@ -31,4 +40,5 @@ public class NetworkCommunicationDAO {
 		}
 		return strengthValue;
 	}
+	
 }

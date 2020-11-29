@@ -1,10 +1,13 @@
 package com.ajiranet.networkcommunicationservice.exceptionhandler;
 
-public class DeviceNotFoundException extends RuntimeException {
+public class InvalidConnectionException extends RuntimeException {
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 
-	public DeviceNotFoundException(String error) {
+	public InvalidConnectionException(String error) {
 		super(error);
 	}
 }
